@@ -35,6 +35,12 @@ document.querySelector('.bouton').addEventListener('click', e => {
 
     //Recueillir le(s) mot(s) entré(s)
     textUser = textField.value;
+        
+    //-----------
+    //En javascript, on peut vérifier des tableaux en utilisant «.some», qui filtre à travers chaque élément du tableau.
+    //Chaque mot est ensuite converti en minuscule pour éviter d'avoir à filtrer toutes les variantes des mots incluant les majuscules.
+    //Si ce mot ou un des mots soumis est équivalent à un mot contenu dans le fichier json, la boucle retourne «Vrai».
+    //-----------
 
     let filtreAnglais = badWordsEng.some(word => {
         if (textUser.toLowerCase() === word) return true;
